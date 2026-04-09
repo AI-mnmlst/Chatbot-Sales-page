@@ -1,17 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChatEmbed Pro | AI-Powered Chatbot for Your Website | mnmlst Studio</title>
-    <meta name="description" content="Transform your website into a 24/7 sales machine with AI-powered chatbots. Instant setup, no coding required. Start converting more visitors today.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="description"
+        content="Transform your website into a 24/7 sales machine with AI-powered chatbots. Instant setup, no coding required. Start converting more visitors today.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <style>
         :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-tertiary: #f1f5f9;
+            --bg-card: #ffffff;
+            --nav-bg: rgba(255, 255, 255, 0.8);
+            --accent: #2563eb;
+            --accent-light: #3b82f6;
+            --accent-glow: rgba(37, 99, 235, 0.35);
+            --success: #10b981;
+            --warning: #f59e0b;
+            --text-white: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --border-light: #f8fafc;
+            --gradient: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+        }
+
+        :root[data-theme="dark"] {
             --bg-primary: #0a0a0a;
             --bg-secondary: #141414;
             --bg-tertiary: #1a1a1a;
             --bg-card: #1f1f1f;
+            --nav-bg: rgba(10, 10, 10, 0.8);
             --accent: #2563eb;
             --accent-light: #3b82f6;
             --accent-glow: rgba(37, 99, 235, 0.35);
@@ -104,7 +129,7 @@
             right: 0;
             z-index: 1000;
             padding: 16px 0;
-            background: rgba(10, 10, 10, 0.8);
+            background: var(--nav-bg);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border-light);
         }
@@ -176,6 +201,39 @@
         .nav-cta:hover {
             background: var(--accent-light);
             transform: translateY(-1px);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .theme-toggle:hover {
+            color: var(--text-primary);
+            background: var(--bg-tertiary);
+        }
+
+        .theme-toggle svg {
+            width: 20px;
+            height: 20px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .logo-img {
+            height: 36px;
+            width: auto;
         }
 
         /* Buttons */
@@ -355,9 +413,17 @@
             background: var(--bg-card);
         }
 
-        .demo-dot:nth-child(1) { background: #ff5f57; }
-        .demo-dot:nth-child(2) { background: #febc2e; }
-        .demo-dot:nth-child(3) { background: #28c840; }
+        .demo-dot:nth-child(1) {
+            background: #ff5f57;
+        }
+
+        .demo-dot:nth-child(2) {
+            background: #febc2e;
+        }
+
+        .demo-dot:nth-child(3) {
+            background: #28c840;
+        }
 
         .demo-url {
             flex: 1;
@@ -391,12 +457,31 @@
             height: 20px;
         }
 
-        .placeholder-block:nth-child(1) { width: 50%; height: 32px; margin-bottom: 8px; }
-        .placeholder-block:nth-child(2) { width: 90%; }
-        .placeholder-block:nth-child(3) { width: 85%; }
-        .placeholder-block:nth-child(4) { width: 75%; }
-        .placeholder-block:nth-child(5) { width: 80%; }
-        .placeholder-block:nth-child(6) { width: 60%; }
+        .placeholder-block:nth-child(1) {
+            width: 50%;
+            height: 32px;
+            margin-bottom: 8px;
+        }
+
+        .placeholder-block:nth-child(2) {
+            width: 90%;
+        }
+
+        .placeholder-block:nth-child(3) {
+            width: 85%;
+        }
+
+        .placeholder-block:nth-child(4) {
+            width: 75%;
+        }
+
+        .placeholder-block:nth-child(5) {
+            width: 80%;
+        }
+
+        .placeholder-block:nth-child(6) {
+            width: 60%;
+        }
 
         .demo-chat {
             width: 380px;
@@ -1189,6 +1274,7 @@
 
         /* Responsive */
         @media (max-width: 1024px) {
+
             .features-grid,
             .testimonials-grid,
             .pricing-grid {
@@ -1291,23 +1377,26 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <a href="#" class="logo">
-                <div class="logo-icon">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
-                    </svg>
-                </div>
-                <span class="logo-text">ChatEmbed Pro</span>
+                <img src="mnmlst-logo.svg" alt="mnmlst logo" class="logo-img">
             </a>
             <ul class="nav-links">
                 <li><a href="#features">Features</a></li>
                 <li><a href="#how-it-works">How It Works</a></li>
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#faq">FAQ</a></li>
+                <li>
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                        <svg viewBox="0 0 24 24" id="theme-icon">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                </li>
                 <li><a href="#contact" class="nav-cta">Get Started</a></li>
             </ul>
         </div>
@@ -1321,18 +1410,20 @@
                 <span class="hero-badge-highlight">New</span>
             </div>
             <h1 class="hero-title">Stop Losing Customers<br>To Slow Response Times</h1>
-            <p class="hero-description">Your website visitors leave within 30 seconds if they don't get answers. ChatEmbed Pro puts an AI assistant on your site that knows your business inside-out and converts visitors into customers 24/7.</p>
+            <p class="hero-description">Your website visitors leave within 30 seconds if they don't get answers.
+                ChatEmbed Pro puts an AI assistant on your site that knows your business inside-out and converts
+                visitors into customers 24/7.</p>
             <div class="hero-ctas">
                 <a href="#contact" class="btn btn-primary btn-large">
                     Start 14-Day Free Trial
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                        <path d="M5 12h14M12 5l7 7-7 7" />
                     </svg>
                 </a>
                 <a href="#demo" class="btn btn-secondary btn-large">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10"/>
-                        <polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/>
+                        <circle cx="12" cy="12" r="10" />
+                        <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" />
                     </svg>
                     Watch Demo
                 </a>
@@ -1340,22 +1431,22 @@
             <div class="hero-note">
                 <span>
                     <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
-                        <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-                        <polyline points="22 4 12 14.01 9 11.01"/>
+                        <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                        <polyline points="22 4 12 14.01 9 11.01" />
                     </svg>
                     No credit card required
                 </span>
                 <span>
                     <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
-                        <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-                        <polyline points="22 4 12 14.01 9 11.01"/>
+                        <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                        <polyline points="22 4 12 14.01 9 11.01" />
                     </svg>
                     Setup in under 5 minutes
                 </span>
                 <span>
                     <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
-                        <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-                        <polyline points="22 4 12 14.01 9 11.01"/>
+                        <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                        <polyline points="22 4 12 14.01 9 11.01" />
                     </svg>
                     Cancel anytime
                 </span>
@@ -1390,7 +1481,7 @@
                         <div class="chat-header">
                             <div class="chat-avatar">
                                 <svg viewBox="0 0 24 24">
-                                    <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+                                    <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
                                 </svg>
                             </div>
                             <div class="chat-header-info">
@@ -1399,17 +1490,22 @@
                             </div>
                         </div>
                         <div class="chat-messages">
-                            <div class="chat-message bot">Hi! 👋 Welcome to our website. I'm here to help you find exactly what you need. What can I assist you with today?</div>
+                            <div class="chat-message bot">Hi! 👋 Welcome to our website. I'm here to help you find
+                                exactly what you need. What can I assist you with today?</div>
                             <div class="chat-message user">Do you offer free shipping?</div>
-                            <div class="chat-message bot">Yes! We offer free shipping on all orders over $50. Orders typically arrive within 3-5 business days. Would you like me to help you find a specific product?</div>
+                            <div class="chat-message bot">Yes! We offer free shipping on all orders over $50. Orders
+                                typically arrive within 3-5 business days. Would you like me to help you find a specific
+                                product?</div>
                             <div class="chat-message user">What's your return policy?</div>
-                            <div class="chat-message bot">We have a hassle-free 30-day return policy. If you're not completely satisfied, you can return any unused item for a full refund. I can also help you start a return if needed!</div>
+                            <div class="chat-message bot">We have a hassle-free 30-day return policy. If you're not
+                                completely satisfied, you can return any unused item for a full refund. I can also help
+                                you start a return if needed!</div>
                         </div>
                         <div class="chat-input">
                             <input type="text" placeholder="Type your message...">
                             <button>
                                 <svg viewBox="0 0 24 24">
-                                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
                                 </svg>
                             </button>
                         </div>
@@ -1450,29 +1546,30 @@
                 <div class="problem-content fade-up">
                     <span class="section-label">The Problem</span>
                     <h2>Your Website is Losing Money Every Single Day</h2>
-                    <p>Studies show that 79% of website visitors who don't get immediate answers will leave and never come back. That's potential revenue walking out the door every hour.</p>
+                    <p>Studies show that 79% of website visitors who don't get immediate answers will leave and never
+                        come back. That's potential revenue walking out the door every hour.</p>
                     <ul class="problem-list">
                         <li>
                             <svg class="problem-icon negative" viewBox="0 0 24 24" fill="none" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"/>
-                                <line x1="15" y1="9" x2="9" y2="15"/>
-                                <line x1="9" y1="9" x2="15" y2="15"/>
+                                <circle cx="12" cy="12" r="10" />
+                                <line x1="15" y1="9" x2="9" y2="15" />
+                                <line x1="9" y1="9" x2="15" y2="15" />
                             </svg>
                             <span>Visitors leave because no one is there to answer their questions</span>
                         </li>
                         <li>
                             <svg class="problem-icon negative" viewBox="0 0 24 24" fill="none" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"/>
-                                <line x1="15" y1="9" x2="9" y2="15"/>
-                                <line x1="9" y1="9" x2="15" y2="15"/>
+                                <circle cx="12" cy="12" r="10" />
+                                <line x1="15" y1="9" x2="9" y2="15" />
+                                <line x1="9" y1="9" x2="15" y2="15" />
                             </svg>
                             <span>You can't afford to hire 24/7 customer support staff</span>
                         </li>
                         <li>
                             <svg class="problem-icon negative" viewBox="0 0 24 24" fill="none" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"/>
-                                <line x1="15" y1="9" x2="9" y2="15"/>
-                                <line x1="9" y1="9" x2="15" y2="15"/>
+                                <circle cx="12" cy="12" r="10" />
+                                <line x1="15" y1="9" x2="9" y2="15" />
+                                <line x1="9" y1="9" x2="15" y2="15" />
                             </svg>
                             <span>Contact forms go unanswered for hours or days</span>
                         </li>
@@ -1534,77 +1631,86 @@
             <div class="text-center">
                 <span class="section-label">Features</span>
                 <h2 class="section-title">Everything You Need to Convert More Visitors</h2>
-                <p class="section-subtitle mx-auto">Powerful AI technology that learns your business and represents your brand perfectly, without any technical setup required.</p>
+                <p class="section-subtitle mx-auto">Powerful AI technology that learns your business and represents your
+                    brand perfectly, without any technical setup required.</p>
             </div>
 
             <div class="features-grid">
                 <div class="feature-card fade-up">
                     <div class="feature-icon">
                         <svg viewBox="0 0 24 24">
-                            <circle cx="12" cy="12" r="10"/>
-                            <path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+                            <circle cx="12" cy="12" r="10" />
+                            <path
+                                d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
                         </svg>
                     </div>
                     <h3>Intelligent Website Learning</h3>
-                    <p>Simply enter your website URL. Our AI scans every page, product, and FAQ to understand your business completely. No manual training required.</p>
+                    <p>Simply enter your website URL. Our AI scans every page, product, and FAQ to understand your
+                        business completely. No manual training required.</p>
                 </div>
 
                 <div class="feature-card fade-up">
                     <div class="feature-icon">
                         <svg viewBox="0 0 24 24">
-                            <polyline points="16 18 22 12 16 6"/>
-                            <polyline points="8 6 2 12 8 18"/>
+                            <polyline points="16 18 22 12 16 6" />
+                            <polyline points="8 6 2 12 8 18" />
                         </svg>
                     </div>
                     <h3>One-Click Installation</h3>
-                    <p>Copy a single line of code and paste it into your website. Works with any platform—WordPress, Shopify, Wix, Squarespace, or custom-built sites.</p>
+                    <p>Copy a single line of code and paste it into your website. Works with any platform—WordPress,
+                        Shopify, Wix, Squarespace, or custom-built sites.</p>
                 </div>
 
                 <div class="feature-card fade-up">
                     <div class="feature-icon">
                         <svg viewBox="0 0 24 24">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                            <path d="M2 17l10 5 10-5"/>
-                            <path d="M2 12l10 5 10-5"/>
+                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                            <path d="M2 17l10 5 10-5" />
+                            <path d="M2 12l10 5 10-5" />
                         </svg>
                     </div>
                     <h3>Multi-Page Training</h3>
-                    <p>Train your chatbot on hundreds of pages—product catalogs, pricing pages, help docs. More knowledge means smarter, more helpful responses.</p>
+                    <p>Train your chatbot on hundreds of pages—product catalogs, pricing pages, help docs. More
+                        knowledge means smarter, more helpful responses.</p>
                 </div>
 
                 <div class="feature-card fade-up">
                     <div class="feature-icon">
                         <svg viewBox="0 0 24 24">
-                            <circle cx="12" cy="12" r="3"/>
-                            <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/>
+                            <circle cx="12" cy="12" r="3" />
+                            <path
+                                d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" />
                         </svg>
                     </div>
                     <h3>Complete Brand Customization</h3>
-                    <p>Match your brand perfectly with custom colors, logo, welcome messages, and conversation tone. Your chatbot, your style.</p>
+                    <p>Match your brand perfectly with custom colors, logo, welcome messages, and conversation tone.
+                        Your chatbot, your style.</p>
                 </div>
 
                 <div class="feature-card fade-up">
                     <div class="feature-icon">
                         <svg viewBox="0 0 24 24">
-                            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
-                            <circle cx="9" cy="7" r="4"/>
-                            <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+                            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
                         </svg>
                     </div>
                     <h3>Automatic Lead Capture</h3>
-                    <p>Collect visitor emails, phone numbers, and inquiries automatically. Qualified leads sent directly to your inbox or CRM system.</p>
+                    <p>Collect visitor emails, phone numbers, and inquiries automatically. Qualified leads sent directly
+                        to your inbox or CRM system.</p>
                 </div>
 
                 <div class="feature-card fade-up">
                     <div class="feature-icon">
                         <svg viewBox="0 0 24 24">
-                            <line x1="18" y1="20" x2="18" y2="10"/>
-                            <line x1="12" y1="20" x2="12" y2="4"/>
-                            <line x1="6" y1="20" x2="6" y2="14"/>
+                            <line x1="18" y1="20" x2="18" y2="10" />
+                            <line x1="12" y1="20" x2="12" y2="4" />
+                            <line x1="6" y1="20" x2="6" y2="14" />
                         </svg>
                     </div>
                     <h3>Real-Time Analytics</h3>
-                    <p>See exactly how visitors interact with your chatbot. Track conversations, popular questions, conversion rates, and customer satisfaction scores.</p>
+                    <p>See exactly how visitors interact with your chatbot. Track conversations, popular questions,
+                        conversion rates, and customer satisfaction scores.</p>
                 </div>
             </div>
         </div>
@@ -1616,26 +1722,30 @@
             <div class="text-center">
                 <span class="section-label">How It Works</span>
                 <h2 class="section-title">Go Live in Under 5 Minutes</h2>
-                <p class="section-subtitle mx-auto">No technical skills needed. No complicated setup. Just three simple steps to transform your website.</p>
+                <p class="section-subtitle mx-auto">No technical skills needed. No complicated setup. Just three simple
+                    steps to transform your website.</p>
             </div>
 
             <div class="how-steps">
                 <div class="how-step fade-up">
                     <div class="step-number">1</div>
                     <h3>Enter Your Website URL</h3>
-                    <p>Paste your website address into our dashboard. Our AI will automatically scan and learn everything about your business, products, and services.</p>
+                    <p>Paste your website address into our dashboard. Our AI will automatically scan and learn
+                        everything about your business, products, and services.</p>
                 </div>
 
                 <div class="how-step fade-up">
                     <div class="step-number">2</div>
                     <h3>Customize Your Chatbot</h3>
-                    <p>Choose your brand colors, upload your logo, set your welcome message, and configure how you want leads captured and delivered.</p>
+                    <p>Choose your brand colors, upload your logo, set your welcome message, and configure how you want
+                        leads captured and delivered.</p>
                 </div>
 
                 <div class="how-step fade-up">
                     <div class="step-number">3</div>
                     <h3>Copy & Embed</h3>
-                    <p>Copy your unique embed code and paste it into your website. Your AI chatbot goes live instantly and starts engaging visitors 24/7.</p>
+                    <p>Copy your unique embed code and paste it into your website. Your AI chatbot goes live instantly
+                        and starts engaging visitors 24/7.</p>
                 </div>
             </div>
         </div>
@@ -1647,90 +1757,97 @@
             <div class="text-center">
                 <span class="section-label">Use Cases</span>
                 <h2 class="section-title">Perfect for Every Business Type</h2>
-                <p class="section-subtitle mx-auto">Whether you're a small business or enterprise, ChatEmbed Pro adapts to your needs.</p>
+                <p class="section-subtitle mx-auto">Whether you're a small business or enterprise, ChatEmbed Pro adapts
+                    to your needs.</p>
             </div>
 
             <div class="usecases-grid">
                 <div class="usecase-card fade-up">
                     <div class="usecase-icon">
                         <svg viewBox="0 0 24 24">
-                            <circle cx="9" cy="21" r="1"/>
-                            <circle cx="20" cy="21" r="1"/>
-                            <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/>
+                            <circle cx="9" cy="21" r="1" />
+                            <circle cx="20" cy="21" r="1" />
+                            <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6" />
                         </svg>
                     </div>
                     <div class="usecase-content">
                         <h3>E-Commerce Stores</h3>
-                        <p>Answer product questions, guide purchasing decisions, handle shipping inquiries, and reduce cart abandonment with instant support.</p>
+                        <p>Answer product questions, guide purchasing decisions, handle shipping inquiries, and reduce
+                            cart abandonment with instant support.</p>
                     </div>
                 </div>
 
                 <div class="usecase-card fade-up">
                     <div class="usecase-icon">
                         <svg viewBox="0 0 24 24">
-                            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
-                            <polyline points="14 2 14 8 20 8"/>
-                            <line x1="16" y1="13" x2="8" y2="13"/>
-                            <line x1="16" y1="17" x2="8" y2="17"/>
-                            <polyline points="10 9 9 9 8 9"/>
+                            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                            <polyline points="14 2 14 8 20 8" />
+                            <line x1="16" y1="13" x2="8" y2="13" />
+                            <line x1="16" y1="17" x2="8" y2="17" />
+                            <polyline points="10 9 9 9 8 9" />
                         </svg>
                     </div>
                     <div class="usecase-content">
                         <h3>Professional Services</h3>
-                        <p>Qualify leads, answer service questions, schedule consultations, and provide instant information about your offerings.</p>
+                        <p>Qualify leads, answer service questions, schedule consultations, and provide instant
+                            information about your offerings.</p>
                     </div>
                 </div>
 
                 <div class="usecase-card fade-up">
                     <div class="usecase-icon">
                         <svg viewBox="0 0 24 24">
-                            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
-                            <polyline points="9 22 9 12 15 12 15 22"/>
+                            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+                            <polyline points="9 22 9 12 15 12 15 22" />
                         </svg>
                     </div>
                     <div class="usecase-content">
                         <h3>Real Estate</h3>
-                        <p>Capture buyer inquiries, answer property questions, schedule viewings, and provide neighborhood information automatically.</p>
+                        <p>Capture buyer inquiries, answer property questions, schedule viewings, and provide
+                            neighborhood information automatically.</p>
                     </div>
                 </div>
 
                 <div class="usecase-card fade-up">
                     <div class="usecase-icon">
                         <svg viewBox="0 0 24 24">
-                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
                         </svg>
                     </div>
                     <div class="usecase-content">
                         <h3>Healthcare Providers</h3>
-                        <p>Handle appointment requests, answer insurance questions, provide service information, and direct patients to the right resources.</p>
+                        <p>Handle appointment requests, answer insurance questions, provide service information, and
+                            direct patients to the right resources.</p>
                     </div>
                 </div>
 
                 <div class="usecase-card fade-up">
                     <div class="usecase-icon">
                         <svg viewBox="0 0 24 24">
-                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                            <line x1="8" y1="21" x2="16" y2="21"/>
-                            <line x1="12" y1="17" x2="12" y2="21"/>
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                            <line x1="8" y1="21" x2="16" y2="21" />
+                            <line x1="12" y1="17" x2="12" y2="21" />
                         </svg>
                     </div>
                     <div class="usecase-content">
                         <h3>SaaS Companies</h3>
-                        <p>Provide product demos, answer feature questions, guide free trial signups, and offer instant technical support.</p>
+                        <p>Provide product demos, answer feature questions, guide free trial signups, and offer instant
+                            technical support.</p>
                     </div>
                 </div>
 
                 <div class="usecase-card fade-up">
                     <div class="usecase-icon">
                         <svg viewBox="0 0 24 24">
-                            <polygon points="12 2 2 7 12 12 22 7 12 2"/>
-                            <polyline points="2 17 12 22 22 17"/>
-                            <polyline points="2 12 12 17 22 12"/>
+                            <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                            <polyline points="2 17 12 22 22 17" />
+                            <polyline points="2 12 12 17 22 12" />
                         </svg>
                     </div>
                     <div class="usecase-content">
                         <h3>Education & Courses</h3>
-                        <p>Answer enrollment questions, explain course content, guide students to the right programs, and handle administrative inquiries.</p>
+                        <p>Answer enrollment questions, explain course content, guide students to the right programs,
+                            and handle administrative inquiries.</p>
                     </div>
                 </div>
             </div>
@@ -1743,19 +1860,37 @@
             <div class="text-center">
                 <span class="section-label">Testimonials</span>
                 <h2 class="section-title">Trusted by Growing Businesses</h2>
-                <p class="section-subtitle mx-auto">See what our customers say about transforming their websites with ChatEmbed Pro.</p>
+                <p class="section-subtitle mx-auto">See what our customers say about transforming their websites with
+                    ChatEmbed Pro.</p>
             </div>
 
             <div class="testimonials-grid">
                 <div class="testimonial-card fade-up">
                     <div class="testimonial-rating">
-                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg viewBox="0 0 24 24">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
                     </div>
-                    <p class="testimonial-text">"We saw a 45% increase in qualified leads within the first month. The chatbot answers questions we didn't even think to put in our FAQ. It's like having a sales rep that never sleeps."</p>
+                    <p class="testimonial-text">"We saw a 45% increase in qualified leads within the first month. The
+                        chatbot answers questions we didn't even think to put in our FAQ. It's like having a sales rep
+                        that never sleeps."</p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">SK</div>
                         <div class="testimonial-info">
@@ -1767,13 +1902,30 @@
 
                 <div class="testimonial-card fade-up">
                     <div class="testimonial-rating">
-                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg viewBox="0 0 24 24">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
                     </div>
-                    <p class="testimonial-text">"Setup took literally 5 minutes. I entered my URL, customized the colors, and embedded the code. Now I have customers reaching out at 2am and getting instant answers."</p>
+                    <p class="testimonial-text">"Setup took literally 5 minutes. I entered my URL, customized the
+                        colors, and embedded the code. Now I have customers reaching out at 2am and getting instant
+                        answers."</p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">MR</div>
                         <div class="testimonial-info">
@@ -1785,13 +1937,30 @@
 
                 <div class="testimonial-card fade-up">
                     <div class="testimonial-rating">
-                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg viewBox="0 0 24 24">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
                     </div>
-                    <p class="testimonial-text">"Our support ticket volume dropped by 60%. The AI handles all the common questions perfectly, and our team can focus on complex issues that actually need human attention."</p>
+                    <p class="testimonial-text">"Our support ticket volume dropped by 60%. The AI handles all the common
+                        questions perfectly, and our team can focus on complex issues that actually need human
+                        attention."</p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">JL</div>
                         <div class="testimonial-info">
@@ -1810,37 +1979,46 @@
             <div class="text-center">
                 <span class="section-label">Pricing</span>
                 <h2 class="section-title">Simple, Transparent Pricing</h2>
-                <p class="section-subtitle mx-auto">Start with a 14-day free trial. No credit card required. Cancel anytime.</p>
+                <p class="section-subtitle mx-auto">Start with a 14-day free trial. No credit card required. Cancel
+                    anytime.</p>
             </div>
 
             <div class="pricing-grid">
                 <div class="pricing-card fade-up">
                     <div class="pricing-name">Starter</div>
                     <div class="pricing-title">Starter</div>
-                    <div class="pricing-price">
-                        <span class="amount">$49</span>
-                        <span class="period">/month</span>
+
+                    <div class="pricing-description">Perfect for small businesses and personal websites getting started.
                     </div>
-                    <div class="pricing-description">Perfect for small businesses and personal websites getting started.</div>
                     <ul class="pricing-features">
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
                             1 Chatbot
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
                             Up to 50 web pages trained
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
                             1,000 messages per month
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
                             Basic customization
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
                             Email support
                         </li>
                     </ul>
@@ -1851,38 +2029,49 @@
                     <div class="pricing-badge">Most Popular</div>
                     <div class="pricing-name">Professional</div>
                     <div class="pricing-title">Professional</div>
-                    <div class="pricing-price">
-                        <span class="amount">$149</span>
-                        <span class="period">/month</span>
-                    </div>
+
                     <div class="pricing-description">For growing businesses that need more power and flexibility.</div>
                     <ul class="pricing-features">
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
                             Up to 5 Chatbots
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
                             Up to 200 web pages per bot
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
                             10,000 messages per month
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
                             Full brand customization
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
                             Analytics dashboard
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
                             Lead capture & CRM integration
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
                             Priority support
                         </li>
                     </ul>
@@ -1892,38 +2081,49 @@
                 <div class="pricing-card fade-up">
                     <div class="pricing-name">Enterprise</div>
                     <div class="pricing-title">Enterprise</div>
-                    <div class="pricing-price">
-                        <span class="amount">$399</span>
-                        <span class="period">/month</span>
-                    </div>
+
                     <div class="pricing-description">For agencies and large businesses with advanced needs.</div>
                     <ul class="pricing-features">
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
                             Unlimited Chatbots
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
                             Unlimited web pages
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
                             Unlimited messages
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
                             White-label option
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
                             API access
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
                             Dedicated account manager
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
                             Custom integrations
                         </li>
                     </ul>
@@ -1939,48 +2139,63 @@
             <div class="text-center">
                 <span class="section-label">FAQ</span>
                 <h2 class="section-title">Frequently Asked Questions</h2>
-                <p class="section-subtitle mx-auto">Got questions? We have answers. If you don't see your question here, feel free to reach out.</p>
+                <p class="section-subtitle mx-auto">Got questions? We have answers. If you don't see your question here,
+                    feel free to reach out.</p>
             </div>
 
             <div class="faq-grid">
                 <div class="faq-item fade-up">
                     <h3>How does the AI learn about my business?</h3>
-                    <p>When you enter your website URL, our AI automatically crawls your pages, reading all your content including products, services, pricing, FAQs, and policies. It builds a comprehensive knowledge base that allows it to answer questions accurately.</p>
+                    <p>When you enter your website URL, our AI automatically crawls your pages, reading all your content
+                        including products, services, pricing, FAQs, and policies. It builds a comprehensive knowledge
+                        base that allows it to answer questions accurately.</p>
                 </div>
 
                 <div class="faq-item fade-up">
                     <h3>Do I need any coding knowledge?</h3>
-                    <p>Not at all! Our system generates a simple embed code that you copy and paste into your website. It works with any website builder including WordPress, Shopify, Wix, Squarespace, and custom HTML sites.</p>
+                    <p>Not at all! Our system generates a simple embed code that you copy and paste into your website.
+                        It works with any website builder including WordPress, Shopify, Wix, Squarespace, and custom
+                        HTML sites.</p>
                 </div>
 
                 <div class="faq-item fade-up">
                     <h3>What if the chatbot doesn't know an answer?</h3>
-                    <p>If the chatbot encounters a question it can't answer confidently, it will offer to collect the visitor's contact information so you can follow up personally. You can also add custom responses for specific questions.</p>
+                    <p>If the chatbot encounters a question it can't answer confidently, it will offer to collect the
+                        visitor's contact information so you can follow up personally. You can also add custom responses
+                        for specific questions.</p>
                 </div>
 
                 <div class="faq-item fade-up">
                     <h3>Can I customize how the chatbot looks?</h3>
-                    <p>Absolutely! You can customize colors, upload your logo, set welcome messages, change the chatbot's name, and adjust its conversation style to match your brand perfectly.</p>
+                    <p>Absolutely! You can customize colors, upload your logo, set welcome messages, change the
+                        chatbot's name, and adjust its conversation style to match your brand perfectly.</p>
                 </div>
 
                 <div class="faq-item fade-up">
                     <h3>How does lead capture work?</h3>
-                    <p>The chatbot can collect visitor emails, phone numbers, and custom information during conversations. Leads are automatically sent to your email or directly integrated with popular CRM systems like HubSpot, Salesforce, and Zapier.</p>
+                    <p>The chatbot can collect visitor emails, phone numbers, and custom information during
+                        conversations. Leads are automatically sent to your email or directly integrated with popular
+                        CRM systems like HubSpot, Salesforce, and Zapier.</p>
                 </div>
 
                 <div class="faq-item fade-up">
                     <h3>Is there a free trial?</h3>
-                    <p>Yes! We offer a 14-day free trial with full access to all features. No credit card required. You can cancel anytime during or after the trial with no obligations.</p>
+                    <p>Yes! We offer a 14-day free trial with full access to all features. No credit card required. You
+                        can cancel anytime during or after the trial with no obligations.</p>
                 </div>
 
                 <div class="faq-item fade-up">
                     <h3>What happens if I exceed my message limit?</h3>
-                    <p>If you approach your monthly message limit, we'll notify you in advance. You can upgrade your plan at any time, or we'll continue service at a small overage rate to ensure your visitors are never left without support.</p>
+                    <p>If you approach your monthly message limit, we'll notify you in advance. You can upgrade your
+                        plan at any time, or we'll continue service at a small overage rate to ensure your visitors are
+                        never left without support.</p>
                 </div>
 
                 <div class="faq-item fade-up">
                     <h3>Can I train the chatbot on specific content?</h3>
-                    <p>Yes! Beyond automatic website learning, you can manually add custom Q&As, upload documents (PDFs, Word files), and train on specific content to ensure the chatbot handles your most important topics perfectly.</p>
+                    <p>Yes! Beyond automatic website learning, you can manually add custom Q&As, upload documents (PDFs,
+                        Word files), and train on specific content to ensure the chatbot handles your most important
+                        topics perfectly.</p>
                 </div>
             </div>
         </div>
@@ -1991,19 +2206,21 @@
         <div class="container">
             <div class="cta-content">
                 <h2>Ready to Convert More Visitors Into Customers?</h2>
-                <p>Join 500+ businesses already using ChatEmbed Pro to engage visitors, capture leads, and grow their revenue around the clock.</p>
+                <p>Join 500+ businesses already using ChatEmbed Pro to engage visitors, capture leads, and grow their
+                    revenue around the clock.</p>
                 <div class="cta-buttons">
                     <a href="mailto:hello@mnmlst.studio" class="btn btn-primary btn-large">
                         Start Your 14-Day Free Trial
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
                     </a>
                     <a href="mailto:hello@mnmlst.studio" class="btn btn-secondary btn-large">Schedule a Demo</a>
                 </div>
                 <div class="cta-guarantee">
                     <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                     </svg>
                     <span>14-day free trial • No credit card required • Cancel anytime</span>
                 </div>
@@ -2017,12 +2234,7 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <a href="#" class="logo">
-                        <div class="logo-icon">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
-                            </svg>
-                        </div>
-                        <span class="logo-text">ChatEmbed Pro</span>
+                        <img src="mnmlst-logo.svg" alt="mnmlst logo" class="logo-img">
                     </a>
                     <p>© 2026 mnmlst Studio. All rights reserved.</p>
                 </div>
@@ -2058,7 +2270,7 @@
 
         // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
@@ -2069,6 +2281,35 @@
                 }
             });
         });
+        // Theme Toggle Logic
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const htmlElement = document.documentElement;
+
+        // Check localStorage for preferred theme (defaults to light as no attribute means light)
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            htmlElement.setAttribute('data-theme', savedTheme);
+            updateThemeIcon(savedTheme);
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme') || 'light';
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+
+        function updateThemeIcon(theme) {
+            if (theme === 'dark') {
+                themeIcon.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+            } else {
+                themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+            }
+        }
     </script>
 </body>
+
 </html>
